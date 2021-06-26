@@ -1,3 +1,65 @@
 body {
-  background-color: grey;
+  background: url(tausta.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.centerBox {
+  background-color: #F4B9E7;
+  padding: 20px;
+  width: 70%;
+  margin-left:auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.header {
+  width: 100%;
+  height: auto;
+}
+
+.upperTitle{
+  background-color: #F4B9E7;
+  padding: auto;
+  width: auto;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #F4B9E7;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+#navbar a.active {
+  background-color: #e8a0a0;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #e8a0a0;
+  color: black;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
 }
