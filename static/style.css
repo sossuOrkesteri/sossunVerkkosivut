@@ -5,7 +5,17 @@ body {
   background-position: center center;
 }
 
+/*se div mihin lisätään sivuston tekstit*/
 .centerBox {
+  background-color: #F4B9E7;
+  padding: 20px;
+  width: 70%;
+  margin-left:auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.footer{
   background-color: #F4B9E7;
   padding: 20px;
   width: 70%;
@@ -19,12 +29,6 @@ body {
   height: auto;
 }
 
-.upperTitle{
-  background-color: #F4B9E7;
-  padding: auto;
-  width: auto;
-  text-align: center;
-}
 
 #navbar {
   overflow: hidden;
@@ -34,19 +38,19 @@ body {
 #navbar a {
   float: left;
   display: block;
-  color: #000000;
+  color: #black;
   text-align: center;
   padding: 14px;
   text-decoration: none;
 }
 
 #navbar a.active {
-  background-color: #e8a0a0;
+  background-color: #FA9CC2;
   color: black;
 }
 
-#navbar a.active {
-  background-color: #e8a0a0;
+#navbar a:hover {
+  background-color: #FA9CC2;
   color: black;
 }
 

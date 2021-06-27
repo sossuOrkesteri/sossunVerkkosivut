@@ -14,11 +14,9 @@ def tilaa():
 #mitenSoittajaksi
 @app.route("/mukaan")
 def mukaan():
-	return "Tervetuloa"
+	return render_template("tuleMukaan.html")
 
 #ajankohtaista
 @app.route("/ajankohtaista")
 def ajankohtaista():
 	return "Somet"
-
-
