@@ -44,6 +44,7 @@ body {
   text-decoration: none;
 }
 
+
 #navbar a.active {
   background-color: #FA9CC2;
   color: black;
@@ -53,6 +54,7 @@ body {
   background-color: #FA9CC2;
   color: black;
 }
+
 
 .content {
   padding: 16px;
