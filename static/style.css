@@ -29,21 +29,23 @@ body {
   height: auto;
 }
 
-
+/*navbar vanhempi*/
 #navbar {
   font-family: Tahoma;
   overflow: hidden;
   background-color: #F4B9E7;
   padding: 20px;
-  width: 70%; /*padding ja width samat kuin centerboxissa!*/
+   /*width: 70%;padding ja width samat kuin centerboxissa!*/
 }
 
+/*navbarin lapset*/
 #navbar a {
   float: left;
+  width: 20%;
   display: block;
   color: #black;
   text-align: center;
-  padding: 14px;
+  padding: 10px;
   text-decoration: none;
 }
 
