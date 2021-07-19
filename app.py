@@ -9,12 +9,12 @@ def index():
 #tilaaSossuKeikalle
 @app.route("/tilaasossu")
 def tilaa():
-	return "Moimoi!"
+	return render_template("tilaasossu.html")
 
 #mitenSoittajaksi
 @app.route("/mukaan")
 def mukaan():
-	return render_template("tuleMukaan.html")
+	return render_template("tulemukaan.html")
 
 #ajankohtaista
 @app.route("/ajankohtaista")
