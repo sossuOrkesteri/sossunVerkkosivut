@@ -42,7 +42,7 @@ body {
 }
 
 /*navbarin a lapset*/
-#navbar a{
+#navbar a {
   float: left;
   width: 20%;
   display: block;
@@ -51,7 +51,6 @@ body {
   padding: 10px;
   text-decoration: none;
 }
-
 
 #navbar a.active {
   background-color: #FA9CC2;
