@@ -1,6 +1,7 @@
-from flask import Flask
+from flask import Flask, render_template
+import json
+
 app = Flask(__name__)
-from flask import render_template
 
 @app.route("/")
 def index():
@@ -19,4 +20,9 @@ def mukaan():
 #ajankohtaista
 @app.route("/ajankohtaista")
 def ajankohtaista():
-	return "Somet"
+    try:
+        file = open("instagram_media.json", "r")
+        media = json.loads(file.read())
+    except FileNotFoundError:
+        return render_template("index.html")
+    return render_template('ajankohtaista.html', media=media)

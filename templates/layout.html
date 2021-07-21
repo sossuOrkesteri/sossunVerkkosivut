@@ -36,22 +36,21 @@
     <a href="https://www.facebook.com/SOSSu.orkesteri">
       <img src="/static/fb">
     </a>
-
   </footer>
 
-  <script>
-    window.onscroll = function() {myFunction()};
+    <script>
+      window.onscroll = function() {myFunction()};
 
-    var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop;
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
 
-    function myFunction() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+        } else {
+          navbar.classList.remove("sticky");
+        }
       }
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>
