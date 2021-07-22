@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    {% block head %}
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Savolaisen Osakunnan Soitannollinen Seura SOSSu ry</title>
+    {% endblock %}
+  </head>
+
+  <body>
+  <div class="header">
+    <img src="/static/Kansikuva.png">
+  </div>
+
+  <div id="navbar">
+    <a href="/"><img src="/static/logo_rs.png"</a>
+    <a href="/tilaasossu">Tilaa meidät keikalle</a>
+    <a href="/mukaan">Tule mukaan</a>
+    <a href="/ajankohtaista">Ajankohtaista</a>
+  </div>
+
+  <br>
+  <div id="centerBox">{% block content %}{% endblock %}</div>
+  <br>
+  <footer class="footer">
+    <p>Savolaisen Osakunnan Soitannollinen Seura SOSSu ry</p>
+    <p>sossu.orkesteri@gmail.com</p>
+    <p> Mannerheimintie 5 A</p>
+    <p>00100 Helsinki</p>
+  </footer>
+
+    <script>
+      window.onscroll = function() {myFunction()};
+
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+    </script>
+  </body>
+</html>
