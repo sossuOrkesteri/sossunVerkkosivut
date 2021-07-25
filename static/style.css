@@ -6,13 +6,17 @@ body {
 }
 
 /*se div mihin lisätään sivuston tekstit*/
-.centerBox {
-  background-color: #F4B9E7;
-  padding: 20px;
+
+.website {
   width: 70%;
   margin-left:auto;
   margin-right: auto;
-  text-align: center;
+}
+
+.centerBox {
+  background-color: #F4B9E7;
+  padding: 20px;
+  text-align: left;
 }
 
 .footer{
@@ -28,29 +32,34 @@ body {
 .header {
   width: 100%;
   height: auto;
-
+  overflow: hidden;
 }
 
 /*navbar vanhempi*/
 #navbar {
-  margin-left:auto;
-  margin-right: auto;
-  font-family: Tahoma;
-  overflow: hidden;
-  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #F4B9E7;
-  padding: 20px;
-  width: 70%; /*padding ja width samat kuin centerboxissa!*/
+  font-family: Tahoma;
+}
+
+.navbarLinks {
+  list-style: none;
+  display: flex;
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px 15px;
 }
 
 /*navbarin a lapset*/
-#navbar a {
-  float: left;
-  width: 20%;
-  display: block;
-  color: #black;
-  text-align: center;
-  padding: 10px;
+.navbarChild a {
+  display: inline-block;
+  background-color: #F4B9E7;
+  padding: 10px 15px;
   text-decoration: none;
 }
 
