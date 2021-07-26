@@ -1,0 +1,91 @@
+.some-picture {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.some-picture-overlay {
+  width: 10%;
+  height: 10%;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+.some-entry {
+  background-color: #F4B9E7;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: min(20vw, 196px) 1fr;
+  grid-template-rows: min(20vw, 196px);
+  min-height: 50px;
+  column-gap: 4px;
+  z-index: -1;
+}
+
+.some-entry:last-of-type {
+  margin-bottom: 0;
+}
+
+.some-info {
+  margin: auto 0;
+  position: relative;
+  width: 100%;
+}
+
+.some-info > * {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.some-timestamp {
+  position: absolute;
+  bottom: 100%;
+}
+
+.some-caption {
+  line-height: 1.2em;
+  hyphens: auto;
+}
+
+.some-caption#short {
+  position: relative;
+  height: 3.6em;
+  overflow: hidden;
+}
+
+.some-caption#long {
+  position: absolute;
+  background-color: #FA9CC2;
+  top: 0;
+  z-index: 2;
+  cursor: pointer;
+  display: none;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.some-caption#dummy {
+  position: absolute;
+  visibility: hidden;
+  top: 0;
+}
+
+.some-caption#dummy > div {
+  position: absolute;
+  background-color: #F4B9E7;
+  top: max(3.6em, min(100%, 4.8em));
+  width: 100%;
+  height: 1.2em;
+  visibility: visible;
+  z-index: 1;
+}
+
+.some-showmore {
+  position: absolute;
+  background-color: #F4B9E7;
+  top: 100%;
+  width: 100%;
+  cursor: pointer;
+}

@@ -61,6 +61,7 @@ body {
   background-color: #F4B9E7;
   padding: 10px 15px;
   text-decoration: none;
+  color: black;
 }
 
 #navbar a.active {
@@ -94,27 +95,7 @@ p, h3, h2 {
   padding-top: 60px;
 }
 
-.fit-picture {
-	height: 196px;
-	width: 196px;
-	background: #000000;
-	object-fit: contain;
-}
-
 .social-media-logos{
   padding: 10px;
   align-items: center;
-}
-
-.social-media-entry {
-  background-color: #ffffff00;
-  margin: 10px auto;
-	width: 100%;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-a {
-	text-decoration: none;
-	color: #000000;
 }
