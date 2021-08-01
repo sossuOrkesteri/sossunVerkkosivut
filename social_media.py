@@ -1,4 +1,4 @@
-import json, time, requests
+import json, time, requests, re
 
 def read_data_from_file(filename):
     with open(filename, "r") as file:
@@ -41,7 +41,9 @@ def format_media(media):
         # date format
         timestamp = time.strptime(entry["timestamp"], "%Y-%m-%dT%H:%M:%S%z")
         entry["timestamp"] = time.strftime("%d.%m.%Y", timestamp)
-        print(entry["timestamp"])
+
+        # remove hashtags from the ends of captions
+        entry["caption"] = re.sub("(\s?#\S+)*$", "", entry["caption"])
     return media
 
 def fetch_instagram_media():
