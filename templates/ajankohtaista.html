@@ -1,34 +1,61 @@
 {% extends "layout.html" %}
 
-{% block head %}{{ super() }}{% endblock %}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/ajankohtaista.css">
+{% endblock %}
 
 {% block content %}
   {{ super() }}
   <div class="centerBox">
     {% for entry in media %}
-    <div class="social-media-entry">
-      <a href="{{ entry["permalink"] }}"
-         target="_blank">
-        <div style="float: left; margin: 0px 10px;">
-          <img class="fit-picture"
+      <div class="some-entry">
+        <a href="{{ entry["permalink"] }}"
+           target="_blank"
+           style="position: relative">
+          <img class="some-picture-overlay"
+               src="static/ig-logo.svg">
+          <img class="some-picture"
+               alt="{{ entry["caption"] }}"
             {% if entry["media_type"] == "IMAGE"
             or entry["media_type"] == "CAROUSEL_ALBUM" %}
                src={{ entry["media_url"] }}
             {% elif entry["media_type"] == "VIDEO" %}
                src={{ entry["thumbnail_url"] }}
-            {% endif %}
-               alt="{{ entry["caption"] }}">
-        </div>
-        <div style="text-align: left">
-          <div>
-            {{ entry["timestamp"] }}
+            {% endif %}>
+        </a>
+        <div class="some-info">
+          <div class="some-timestamp">
+            <small>{{ entry["timestamp"] }} </small>
           </div>
-          <div style="overflow: hidden">
+          <div class="some-caption" id="short">
             {{ entry["caption"] }}
           </div>
+          <div class="some-caption" id="long" onclick="showless(this)">
+            {{ entry["caption"] }}
+          </div>
+          <div class="some-caption" id="dummy">
+            {{ entry["caption"] }}
+            <div></div>
+          </div>
+          <div class="some-showmore" onclick="showmore(this)">
+            <small> näytä lisää </small>
+          </div>
         </div>
-      </a>
-    </div>
+      </div>
     {% endfor %}
   </div>
+  <script>
+    function showmore(elem) {
+      let captionLong = elem.parentNode.querySelector(".some-caption#long");
+      captionLong.style.display = "block";
+      console.log("showmore");
+    }
+
+    function showless(elem) {
+      elem.style.display = "none";
+      console.log("showless");
+    }
+  </script>
 {% endblock %}
+

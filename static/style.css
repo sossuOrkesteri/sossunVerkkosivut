@@ -61,18 +61,19 @@ body {
   background-color: #F4B9E7;
   padding: 10px 15px;
   text-decoration: none;
+  color: black;
 }
 
 #navbar a.active {
   background-color: #FA9CC2;
   color: black;
+  z-index: 3;
 }
 
 #navbar a:hover {
   background-color: #FA9CC2;
   color: black;
 }
-
 
 .content {
   padding: 16px;
@@ -88,17 +89,11 @@ p, h3, h2 {
   border-bottom: 3px solid #484848;
   top: 0;
   width: 100%;
+  z-index: 3;
 }
 
 .sticky + .content {
   padding-top: 60px;
-}
-
-.fit-picture {
-	height: 196px;
-	width: 196px;
-	background: #000000;
-	object-fit: contain;
 }
 
 .social-media-logos{
@@ -106,18 +101,6 @@ p, h3, h2 {
   align-items: center;
 }
 
-.social-media-entry {
-  background-color: #ffffff00;
-  margin: 10px auto;
-	width: 100%;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-a {
-	text-decoration: none;
-	color: #000000;
-}
 
 .mobile-navbar{
   display:none;

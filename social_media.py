@@ -1,4 +1,4 @@
-import json, time, requests
+import json, time, requests, re
 
 def read_data_from_file(filename):
     with open(filename, "r") as file:
@@ -33,7 +33,18 @@ def refresh_instagram_access_token():
     expiration_date = time.strftime("%Y.%m.%d %H:%M", time.gmtime(expiration_date))
     secrets["last_refresh"] = time.time()
     print(f"Instagram access token refreshed. Expires on {expiration_date}")
-    write_data_to_file("secrets.json", secrets)
+    return secrets
+
+def format_media(media):
+    """ Writes the media returned by the IG API in the desired format. """
+    for entry in media:
+        # date format
+        timestamp = time.strptime(entry["timestamp"], "%Y-%m-%dT%H:%M:%S%z")
+        entry["timestamp"] = time.strftime("%d.%m.%Y", timestamp)
+
+        # remove hashtags from the ends of captions
+        entry["caption"] = re.sub("(\s?#\S+)*$", "", entry["caption"])
+    return media
 
 def fetch_instagram_media():
     """ Fetches the most recent media of the instagram user. """
@@ -43,9 +54,10 @@ def fetch_instagram_media():
         "thumbnail_url", "timestamp", "children"
     ])
     response_body = call("/{:s}/media".format(secrets["user_id"]), {"fields": fields})
-    media = response_body["data"]
-    write_data_to_file("instagram_media.json", media)
+    return format_media(response_body["data"])
 
 if __name__ == "__main__":
-    refresh_instagram_access_token()
-    fetch_instagram_media()
+    secrets = refresh_instagram_access_token()
+    write_data_to_file("secrets.json", secrets)
+    media = fetch_instagram_media()
+    write_data_to_file("instagram_media.json", media)
