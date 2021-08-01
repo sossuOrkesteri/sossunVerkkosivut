@@ -22,7 +22,6 @@ body {
 .footer{
   background-color: #F4B9E7;
   padding: 20px;
-  width: 70%;
   margin-left:auto;
   margin-right: auto;
   text-align: center;
@@ -32,7 +31,13 @@ body {
 .header {
   width: 100%;
   height: auto;
-  overflow: hidden;
+  display: flex;
+}
+
+#header-picture{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /*navbar vanhempi*/
@@ -42,6 +47,7 @@ body {
   align-items: center;
   background-color: #F4B9E7;
   font-family: Tahoma;
+  height: auto;
 }
 
 .navbarLinks {
@@ -52,7 +58,13 @@ body {
 .logo {
   display: inline-block;
   vertical-align: middle;
+  padding: 10px 10px;
+}
+
+#flag-pic{
+  display: inline-block;
   padding: 10px 15px;
+
 }
 
 /*navbarin a lapset*/
@@ -67,12 +79,12 @@ body {
 #navbar a.active {
   background-color: #FA9CC2;
   color: black;
-  z-index: 3;
 }
 
 #navbar a:hover {
   background-color: #FA9CC2;
   color: black;
+  z-index: 3;
 }
 
 .content {

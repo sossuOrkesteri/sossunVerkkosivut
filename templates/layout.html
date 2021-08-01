@@ -12,7 +12,7 @@
   <body>
   <div class="website">
   <div class="header">
-  <img src="/static/Kansikuva.png">
+  <img id="header-picture" src="/static/Kansikuva.png" object-fit="contain">
   </div>
 
   <div id="navbar">
@@ -21,11 +21,13 @@
     <li class="navbarChild"><a href="/tilaasossu">Tilaa meidät keikalle</a></li>
     <li class="navbarChild"><a href="/mukaan">Tule mukaan</a></li>
     <li class="navbarChild"><a href="/ajankohtaista">Ajankohtaista</a></li>
+    <img id="flag-pic" src="/static/suomi.png">
+    <img id="flag-pic" src="/static/english.png">
     <img id="mobile-button" src="/static/menu.png">
     </ul>
   </div>
 
-  <!--Mobiiliversion yläpalkki -->
+  <!--Mobiiliversion valikon sisältö -->
   <div class="mobile-navbar">
     <a href="/tilaasossu">Tilaa meidät keikalle</a>
     <a href="/mukaan">Tule mukaan</a>
@@ -48,6 +50,7 @@
       <img class="social-media-logos" src="/static/fb">
     </a>
   </footer>
+</div>
 
     <script>
       window.onscroll = function() {stickyNavBar()};
@@ -77,6 +80,5 @@
       });
 
     </script>
-  </div>
   </body>
 </html>
