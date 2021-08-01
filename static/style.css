@@ -118,3 +118,34 @@ a {
 	text-decoration: none;
 	color: #000000;
 }
+
+.mobile-navbar{
+  display:none;
+    background-color: #F4B9E7;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: left;
+}
+
+#mobile-button {
+  display: none;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+#mobile-button {
+  display: block;
+}
+
+.navbarChild{
+  display: none;
+}
+
+.mobile-navbar {
+  background-color: #F4B9E7;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: left;
+}
+}
