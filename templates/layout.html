@@ -12,7 +12,7 @@
   <body>
   <div class="website">
   <div class="header">
-  <img id="header-picture" src="/static/Kansikuva.png" object-fit="contain">
+  <img id="header-picture" src="/static/img-banner.jpg" object-fit="contain">
   </div>
 
   <div id="navbar">
@@ -37,7 +37,7 @@
   </div>
 
   <br>
-  <div id="centerBox">{% block content %}{% endblock %}</div>
+  <div class="centerBox">{% block content %}{% endblock %}</div>
   <br>
   <footer class="footer">
     <p>Savolaisen Osakunnan Soitannollinen Seura SOSSu ry</p>
@@ -78,6 +78,13 @@
         } else {
           mobileMenu.style.display = "none";
           mobileMenuBtn.innerHTML = "Menu";
+        }
+      });
+
+      var mobileLinks = document.querySelector(".mobile-navbar");
+      mobileLinks.addEventListener("click", () => {
+        if (mobileLinks.style.display === "flex") {
+          mobileLinks.style.display = "none";
         }
       });
 

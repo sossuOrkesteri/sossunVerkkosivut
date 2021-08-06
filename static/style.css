@@ -8,19 +8,20 @@ body {
 /*se div mihin lisätään sivuston tekstit*/
 
 .website {
-  width: 70%;
+  width: 80%;
+  max-width: 1000px;
   margin-left:auto;
   margin-right: auto;
 }
 
 .centerBox {
-  background-color: #F4B9E7;
+  background-color: #FDD6FE;
   padding: 20px;
   text-align: left;
 }
 
 .footer{
-  background-color: #F4B9E7;
+  background-color: #FDD6FE;
   padding: 20px;
   margin-left:auto;
   margin-right: auto;
@@ -45,9 +46,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #F4B9E7;
+  background-color: #FDD6FE;
   font-family: Tahoma;
   height: auto;
+  box-shadow: 0 2px 4px 4px rgba(0,0,0,.5);
+  z-index: 0;
 }
 
 .navbarLinks {
@@ -70,7 +73,7 @@ body {
 /*navbarin a lapset*/
 .navbarChild a {
   display: inline-block;
-  background-color: #F4B9E7;
+  background-color: #FDD6FE;
   padding: 10px 15px;
   text-decoration: none;
   color: black;
@@ -98,7 +101,7 @@ p, h3, h2 {
 
 .sticky {
   position: sticky;
-  border-bottom: 3px solid #484848;
+  /*border-bottom: 3px solid #484848;*/
   top: 0;
   width: 100%;
   z-index: 3;
@@ -112,7 +115,6 @@ p, h3, h2 {
   padding: 10px;
   align-items: center;
 }
-
 
 .mobile-navbar{
   display:none;
@@ -132,8 +134,29 @@ p, h3, h2 {
   display: block;
 }
 
+.mobileLinks{
+  list-style: none;
+  display: flex;
+  list-style: none;
+  font-family: Tahoma;
+  text-decoration: none!important;
+  display: flex;
+}
+
 .navbarChild{
   display: none;
+}
+
+.mobileChild{
+  display: inline-block;
+  background-color: #F4B9E7;
+  padding: 10px 15px;
+  color: black;
+}
+
+.mobileChild a{
+  text-decoration: none;
+  color: black;
 }
 
 .mobile-navbar {
@@ -142,5 +165,12 @@ p, h3, h2 {
   flex-direction: column;
   justify-content: space-around;
   align-items: left;
+  border-bottom: 3px solid #484848;
+  top: 0;
+  width: 100%;
+  position: sticky;
+  z-index: 1;
+  }
 }
+
 }

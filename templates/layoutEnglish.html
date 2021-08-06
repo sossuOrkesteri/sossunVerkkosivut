@@ -74,10 +74,15 @@
       mobileMenuBtn.addEventListener("click", () => {
         if (mobileMenu.style.display === "none") {
           mobileMenu.style.display = "flex";
-          mobileMenuBtn.innerHTML = "X";
         } else {
           mobileMenu.style.display = "none";
-          mobileMenuBtn.innerHTML = "Menu";
+        }
+      });
+
+      var mobileLinks = document.querySelector(".mobile-navbar");
+      mobileLinks.addEventListener("click", () => {
+        if (mobileLinks.style.display === "flex") {
+          mobileLinks.style.display = "none";
         }
       });
 
