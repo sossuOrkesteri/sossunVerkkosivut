@@ -15,20 +15,20 @@ def eng_index():
 #tilaaSossuKeikalle
 @app.route("/tilaasossu")
 def tilaa():
-	return render_template("tilaasossu.html")
+    return render_template("tilaasossu.html", luokka1="active",luokka2="", luokka3="")
 
-@app.route("/order")
+@app.route("/bookus")
 def order():
-    return render_template("order.html")
+    return render_template("order.html", luokka1="active",luokka2="", luokka3="")
 
 #mitenSoittajaksi
 @app.route("/mukaan")
 def mukaan():
-	return render_template("tulemukaan.html")
+	return render_template("tulemukaan.html", luokka1="",luokka2="active", luokka3="")
 
 @app.route("/joinsossu")
 def join():
-    return render_template("joinsossu.html")
+    return render_template("joinsossu.html", luokka1="",luokka2="active", luokka3="")
 
 #ajankohtaista
 @app.route("/ajankohtaista")

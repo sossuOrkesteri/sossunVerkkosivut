@@ -12,16 +12,16 @@
   <body>
   <div class="website">
   <div class="header">
-  <img id="header-picture" src="/static/Kansikuva.png" object-fit="contain">
+  <img id="header-picture" src="/static/img-banner.jpg"  object-fit="contain">
   </div>
 
   <div id="navbar">
     <a href="/eng" class="logo"><img src="/static/logo_rs.png"></a>
     <ul class="navbarLinks">
-    <li class="navbarChild"><a href="/order">Book us</a></li>
-    <li class="navbarChild"><a href="/joinsossu">Join SOSSu</a></li>
-    <li class="navbarChild"><a href="/ajankohtaista">Social Media</a></li>
-    <li class="navbarChild"><a href="/"><img src="/static/suomi.png"></a></li>
+    <li id="navbarChild" class={{luokka1}}><a href="/bookus">Book us</a></li>
+    <li id="navbarChild" class={{luokka2}}><a href="/joinsossu">Join SOSSu</a></li>
+    <li id="navbarChild" class={{luokka3}}><a href="/ajankohtaista">Social Media</a></li>
+    <li id="navbarChild"><a href="/"><img src="/static/suomi.png"></a></li>
     <img id="mobile-button" src="/static/menu.png">
     </ul>
   </div>
@@ -85,7 +85,6 @@
           mobileLinks.style.display = "none";
         }
       });
-
     </script>
   </body>
 </html>

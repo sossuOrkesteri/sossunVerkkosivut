@@ -80,7 +80,7 @@ body {
 }
 
 /*navbarin a lapset*/
-.navbarChild a {
+#navbarChild a {
   display: inline-block;
   background-color: #FDD6FE;
   padding: 10px 15px;
@@ -88,7 +88,7 @@ body {
   color: black;
 }
 
-#navbar a.active {
+.active {
   background-color: #FA9CC2;
   color: black;
 }
