@@ -3,6 +3,8 @@ body {
   background-size: 500px 500px;
   background-repeat: repeat;
   background-position: center center;
+  margin: 0;
+  padding: 0;
 }
 
 /*se div mihin lisätään sivuston tekstit*/
@@ -16,8 +18,9 @@ body {
 
 .centerBox {
   background-color: #FDD6FE;
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
   text-align: left;
+  box-shadow: 2px 4px 4px 4px rgba(0,0,0,.5);
 }
 
 .footer{
@@ -27,6 +30,7 @@ body {
   margin-right: auto;
   text-align: center;
   text-decoration: none;
+  box-shadow: 2px 4px 4px 4px rgba(0,0,0,.5);
 }
 
 .footer p{
@@ -37,6 +41,7 @@ body {
   width: 100%;
   height: auto;
   display: flex;
+  box-shadow: 2px 4px 4px 4px rgba(0,0,0,.5);
 }
 
 #header-picture{
@@ -53,7 +58,7 @@ body {
   background-color: #FDD6FE;
   font-family: Tahoma;
   height: auto;
-  box-shadow: 0 2px 4px 4px rgba(0,0,0,.5);
+  box-shadow: 2px 4px 4px 4px rgba(0,0,0,.5);
   z-index: 0;
 }
 
@@ -103,9 +108,9 @@ p, h3, h2 {
  text-decoration: none;
  }
 
+
 .sticky {
   position: sticky;
-  /*border-bottom: 3px solid #484848;*/
   top: 0;
   width: 100%;
   z-index: 3;
