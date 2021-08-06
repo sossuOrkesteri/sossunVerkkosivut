@@ -7,7 +7,7 @@
 
 {% block content %}
   {{ super() }}
-  <div class="centerBox">
+  <div>
     {% for entry in media %}
       <div class="some-entry">
         <a href="{{ entry["permalink"] }}"
@@ -58,4 +58,3 @@
     }
   </script>
 {% endblock %}
-
