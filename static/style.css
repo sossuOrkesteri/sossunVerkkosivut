@@ -80,7 +80,7 @@ body {
 }
 
 /*navbarin a lapset*/
-#navbarChild a {
+.navbarChild a {
   display: inline-block;
   background-color: #FDD6FE;
   padding: 10px 15px;
@@ -152,7 +152,7 @@ p, h3, h2 {
   display: flex;
 }
 
-.navbarChild{
+#navbarChild{
   display: none;
 }
 
@@ -174,7 +174,7 @@ p, h3, h2 {
   flex-direction: column;
   justify-content: space-around;
   align-items: left;
-  border-bottom: 3px solid #484848;
+  box-shadow: 2px 4px 4px 4px rgba(0,0,0,.5);
   top: 0;
   width: 100%;
   position: sticky;
