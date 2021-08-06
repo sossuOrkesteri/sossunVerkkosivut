@@ -29,6 +29,10 @@ body {
   text-decoration: none;
 }
 
+.footer p{
+  margin: 3px;
+}
+
 .header {
   width: 100%;
   height: auto;
