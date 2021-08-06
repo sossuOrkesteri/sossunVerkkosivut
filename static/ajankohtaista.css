@@ -15,7 +15,7 @@
 }
 
 .some-entry {
-  background-color: #F4B9E7;
+  background-color: #FDD6FE;
   margin-bottom: 20px;
   display: grid;
   grid-template-columns: min(20vw, 196px) 1fr;
@@ -74,7 +74,7 @@
 
 .some-caption#dummy > div {
   position: absolute;
-  background-color: #F4B9E7;
+  background-color: #FDD6FE;
   top: max(3.6em, min(100%, 4.8em));
   width: 100%;
   height: 1.2em;
@@ -84,7 +84,7 @@
 
 .some-showmore {
   position: absolute;
-  background-color: #F4B9E7;
+  background-color: #FDD6FE;
   top: 100%;
   width: 100%;
   cursor: pointer;

@@ -118,7 +118,7 @@ p, h3, h2 {
 
 .mobile-navbar{
   display:none;
-    background-color: #F4B9E7;
+    background-color: #FDD6FE;
     flex-direction: column;
     justify-content: space-around;
     align-items: left;
@@ -149,7 +149,7 @@ p, h3, h2 {
 
 .mobileChild{
   display: inline-block;
-  background-color: #F4B9E7;
+  background-color: #FDD6FE;
   padding: 10px 15px;
   color: black;
 }
@@ -160,7 +160,7 @@ p, h3, h2 {
 }
 
 .mobile-navbar {
-  background-color: #F4B9E7;
+  background-color: #FDD6FE;
   display: none;
   flex-direction: column;
   justify-content: space-around;
