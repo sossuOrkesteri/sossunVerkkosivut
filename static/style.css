@@ -52,14 +52,17 @@ body {
 
 /*navbar vanhempi*/
 #navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: #FDD6FE;
   font-family: Tahoma;
   height: auto;
   box-shadow: 2px 4px 4px 4px rgba(0,0,0,.5);
   z-index: 3;
+}
+
+#navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbarLinks {
@@ -80,7 +83,7 @@ body {
 }
 
 /*navbarin a lapset*/
-#navbarChild a {
+.navbarChild a {
   display: inline-block;
   background-color: #FDD6FE;
   padding: 10px 15px;
@@ -154,13 +157,14 @@ p, h3, h2 {
 
 }
 
-#navbarChild{
+.navbarChild{
   display: none;
 }
 
 .mobileChild{
   position: flexible;
   display: block;
+  font-family: Tahoma;
   background-color: #FDD6FE;
   padding: 10px 15px;
   color: black;
@@ -173,7 +177,6 @@ p, h3, h2 {
 
 .mobile-navbar {
   background-color: #FDD6FE;
-  display: none;
   box-shadow: 2px 4px 4px 4px rgba(0,0,0,.5);
   width: 100%;
   position: sticky;

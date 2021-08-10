@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    {% block head %}
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savolaisen Osakunnan Soitannollinen Seura SOSSu ry</title>
+    {% endblock %}
+  </head>
+
+  <body>
+  <div class="website">
+  <div class="header">
+  <img id="header-picture" src="/static/img-banner.jpg"  object-fit="contain">
+  </div>
+
+  <div id="navbar">
+    <a href="/eng" class="logo"><img src="/static/logo_rs.png"></a>
+    <ul class="navbarLinks">
+    <li id="navbarChild" class={{luokka1}}><a href="/bookus">Book us</a></li>
+    <li id="navbarChild" class={{luokka2}}><a href="/joinsossu">Join SOSSu</a></li>
+    <li id="navbarChild" class={{luokka3}}><a href="/ajankohtaista">Social Media</a></li>
+    <li id="flag-pic"><a href="/"><img src="/static/suomi.png"></a></li>
+    <img id="mobile-button" src="/static/menu.png">
+    </ul>
+  </div>
+
+  <!--Mobiiliversion valikon sisältö -->
+  <div class="mobile-navbar">
+    <ul class="mobileLinks">
+    <li class="mobileChild"><a href="/order">Book us</a></li>
+    <li class="mobileChild"><a href="/joinsossu">Join SOSSu</a></li>
+    <li class="mobileChild"><a href="/ajankohtaista">Social Media</a></li>
+    </ul>
+  </div>
+
+  <br>
+  <div class="centerBox">{% block content %}{% endblock %}</div>
+  <br>
+  <footer class="footer">
+    <p>Savolaisen Osakunnan Soitannollinen Seura SOSSu ry</p>
+    <p>sossu.orkesteri@gmail.com</p>
+    <p>Mannerheimintie 5 A</p>
+    <p>00100 Helsinki</p>
+    <br>
+    <a href="https://www.instagram.com/sossuorkesteri/">
+      <img class="social-media-logos" src="/static/insta">
+    </a>
+    <a href="https://www.facebook.com/SOSSu.orkesteri">
+      <img class="social-media-logos" src="/static/fb">
+    </a>
+  </footer>
+</div>
+
+    <script>
+      window.onscroll = function() {stickyNavBar()};
+
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+
+      function stickyNavBar() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+
+      var mobileMenuBtn = document.querySelector("#mobile-button");
+      var mobileMenu = document.querySelector(".mobile-navbar");
+
+        mobileMenuBtn.addEventListener("click", () => {
+          if (mobileMenu.style.display === "none") {
+            mobileMenu.style.display = "flex";
+            mobileMenuBtn.innerHTML = "X";
+          } else {
+            mobileMenu.style.display = "none";
+            mobileMenuBtn.innerHTML = "Menu";
+          }
+        });
+
+        var mobileLinks = document.querySelector(".mobile-navbar");
+        mobileLinks.addEventListener("click", () => {
+          if (mobileLinks.style.display === "flex") {
+            mobileLinks.style.display = "none";
+          }
+        });
+    </script>
+  </body>
+</html>

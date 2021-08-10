@@ -17,23 +17,25 @@
   </div>
 
   <div id="navbar">
-    <a href="/" class="logo"><img src="/static/logo_rs.png"></a>
-    <ul class="navbarLinks">
-    <li id="navbarChild" class={{luokka1}}><a href="/tilaasossu">Tilaa meidät keikalle</a></li>
-    <li id="navbarChild" class={{luokka2}}><a href="/mukaan">Tule mukaan</a></li>
-    <li id="navbarChild" class={{luokka3}}><a href="/ajankohtaista">Ajankohtaista</a></li>
-    <li id="flag-pic"><a href="/eng"><img src="/static/english.png"></a></li>
-    <img id="mobile-button" src="/static/menu.png">
-    </ul>
-  </div>
+    <div id="navbar-inner">
+      <a href="/" class="logo"><img src="/static/logo_rs.png"></a>
+      <ul class="navbarLinks">
+      <li class="navbarChild"><a href="/tilaasossu">Tilaa meidät keikalle</a></li>
+      <li class="navbarChild"><a href="/mukaan">Tule mukaan</a></li>
+      <li class="navbarChild"><a href="/ajankohtaista">Ajankohtaista</a></li>
+      <li id="flag-pic"><a href="/eng"><img src="/static/english.png"></a></li>
+      <img id="mobile-button" src="/static/menu.png">
+      </ul>
+    </div>
 
-  <!--Mobiiliversion valikon sisältö -->
-  <div class="mobile-navbar">
-    <ul class="mobileLinks">
-    <li class="mobileChild"><a href="/tilaasossu">Tilaa meidät keikalle</a></li>
-    <li class="mobileChild"><a href="/mukaan">Tule mukaan</a></li>
-    <li class="mobileChild"><a href="/ajankohtaista">Ajankohtaista</a></li>
-    </ul>
+    <!--Mobiiliversion valikon sisältö -->
+    <div class="mobile-navbar">
+      <ul class="mobileLinks">
+      <li class="mobileChild"><a href="/tilaasossu">Tilaa meidät keikalle</a></li>
+      <li class="mobileChild"><a href="/mukaan">Tule mukaan</a></li>
+      <li class="mobileChild"><a href="/ajankohtaista">Ajankohtaista</a></li>
+      </ul>
+    </div>
   </div>
 
   <br>
@@ -45,12 +47,8 @@
     <p>Mannerheimintie 5 A</p>
     <p>00100 Helsinki</p>
     <br>
-    <a href="https://www.instagram.com/sossuorkesteri/">
-      <img class="social-media-logos" src="/static/ig-48x48.png">
-    </a>
-    <a href="https://www.facebook.com/SOSSu.orkesteri">
-      <img class="social-media-logos" src="/static/fb-48x48.png">
-    </a>
+    <a href="https://www.instagram.com/sossuorkesteri/"><img class="social-media-logos" src="/static/ig-48x48.png"></a>
+    <a href="https://www.facebook.com/SOSSu.orkesteri"><img class="social-media-logos" src="/static/fb-48x48.png"></a>
   </footer>
 </div>
 
@@ -73,10 +71,10 @@
       var mobileMenu = document.querySelector(".mobile-navbar");
 
       mobileMenuBtn.addEventListener("click", () => {
-        if (mobileMenu.style.display === "none") {
-          mobileMenu.style.display = "flex";
-        } else {
+        if (mobileMenu.style.display === "flex") {
           mobileMenu.style.display = "none";
+        } else {
+          mobileMenu.style.display = "flex";
         }
       });
 
