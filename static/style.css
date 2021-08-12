@@ -92,9 +92,7 @@ body {
 }
 
 .active {
-  background-color: #FA9CC2;
-  color: black;
-  height: 45px;
+  font-weight: bold;
 }
 
 #navbar a:hover {
