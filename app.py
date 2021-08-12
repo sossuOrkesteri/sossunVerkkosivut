@@ -6,11 +6,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", luokka0="active")
 
 @app.route("/eng")
 def eng_index():
-    return render_template("english_main.html")
+    return render_template("english_main.html", luokka0="active")
 
 #tilaaSossuKeikalle
 @app.route("/tilaasossu")
