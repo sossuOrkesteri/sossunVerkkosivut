@@ -20,7 +20,7 @@ def call(url, payload):
     Raises HTTPError if the HTTP response code is 4XX or 5XX. """
     # append access token to payload
     payload |= {"access_token": secrets["access_token"]}
-    response = requests.get("https://graph.instagram.com" + url, params=payload)
+    response = requests.get("https://graph.instagram.com" + url, params=payload, timeout=1)
     response.raise_for_status()
     return response.json()
 
