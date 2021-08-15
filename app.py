@@ -36,6 +36,6 @@ def ajankohtaista():
     try:
         file = open("instagram_media.json", "r")
         media = json.loads(file.read())
-    except FileNotFoundError:
-        return render_template("index.html")
+    except FileNotFoundError as err:
+        return render_template("error.html", msg=str(err))
     return render_template('ajankohtaista.html', media=media, luokka3="active")
