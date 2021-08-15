@@ -18,25 +18,23 @@
 
       <div id="navbar">
         <div id="navbar-inner">
-          <ul class="navbarLinks">
-            <li class="navbarChild {{luokka0}}"><a href="/eng">Main</a></li>
-            <li class="navbarChild {{luokka1}}"><a href="/bookus">Book us</a></li>
-            <li class="navbarChild {{luokka2}}"><a href="/joinsossu">Join SOSSu</a></li>
-            <li class="navbarChild {{luokka3}}"><a href="/ajankohtaista">Social Media</a></li>
-            <li id="flag-pic"><a href="/"><img src="/static/suomi.png"></a></li>
-            <img id="mobile-button" src="/static/menu.png">
-          </ul>
+          <div id="navbarLinks">
+            <a class="navbarItem {{luokka0}}" href="/eng">Main</a>
+            <a class="navbarItem {{luokka1}}" href="/bookus">Book us</a>
+            <a class="navbarItem {{luokka2}}" href="/joinsossu">Join SOSSu</a>
+            <a class="navbarItem {{luokka3}}" href="/ajankohtaista">Social Media</a>
+          </div>
+          <div id="mobile-button" class="navbarItem"><img src="/static/menu.png"></div>
+          <a href="/" class="navbarItem"><img src="/static/suomi.png"></a>
         </div>
 
-<!--Mobiiliversion valikon sisältö -->
-        <div class="mobile-navbar">
-          <ul class="mobileLinks">
-          <li class="mobileChild"><a href="/order">Book us</a></li>
-          <li class="mobileChild"><a href="/joinsossu">Join SOSSu</a></li>
-          <li class="mobileChild"><a href="/ajankohtaista">Social Media</a></li>
-          </ul>
+        <!--Mobiiliversion valikon sisältö -->
+        <div id="mobileLinks">
+          <a class="navbarItem {{luokka0}}" href="/eng">Main</a>
+          <a class="navbarItem {{luokka1}}" href="/bookus">Book us</a>
+          <a class="navbarItem {{luokka2}}" href="/joinsossu">Join SOSSu</a>
+          <a class="navbarItem {{luokka3}}" href="/ajankohtaista">Social Media</a>
         </div>
-
       </div>
 
       <br>
@@ -54,31 +52,16 @@
     </div>
 
     <script>
-      window.onscroll = function() {stickyNavBar()};
-
-      var navbar = document.getElementById("navbar");
-      var sticky = navbar.offsetTop;
-
-      function stickyNavBar() {
-        if (window.pageYOffset >= sticky) {
-          navbar.classList.add("sticky")
-        } else {
-          navbar.classList.remove("sticky");
-        }
-      }
-
-      var mobileMenuBtn = document.querySelector("#mobile-button");
-      var mobileMenu = document.querySelector(".mobile-navbar");
+      var mobileMenuBtn = document.getElementById("mobile-button");
+      var mobileMenu = document.getElementById("mobileLinks");
 
       mobileMenuBtn.addEventListener("click", () => {
-        if (mobileMenu.style.display === "flex") {
+        if (mobileMenu.style.display === "grid") {
           mobileMenu.style.display = "none";
         } else {
-          mobileMenu.style.display = "flex";
+          mobileMenu.style.display = "grid";
         }
       });
-
-
-</script>
+    </script>
   </body>
 </html>
