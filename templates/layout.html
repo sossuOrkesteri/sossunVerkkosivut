@@ -11,74 +11,56 @@
   </head>
 
   <body>
-  <div class="website">
-  <div class="header">
-  <img id="header-picture" src="/static/img-banner.jpg" object-fit="contain">
-  </div>
+    <div class="website">
+      <div class="header">
+        <img id="header-picture" src="/static/img-banner.jpg">
+      </div>
 
-  <div id="navbar">
-    <div id="navbar-inner">
-      <ul class="navbarLinks">
-      <li class="navbarChild {{luokka0}}"><a href="/">Etusivu</a></li>
-      <li class="navbarChild {{luokka1}}"><a href="/tilaasossu">Tilaa meidät keikalle</a></li>
-      <li class="navbarChild {{luokka2}}"><a href="/mukaan">Tule mukaan</a></li>
-      <li class="navbarChild {{luokka3}}"><a href="/ajankohtaista">Ajankohtaista</a></li>
-      <li id="flag-pic"><a href="/eng"><img src="/static/english.png"></a></li>
-      <img id="mobile-button" src="/static/menu.png">
-      </ul>
+      <div id="navbar">
+        <div id="navbar-inner">
+          <div id="navbarLinks">
+            <a class="navbarItem {{luokka0}}" href="/">Etusivu</a>
+            <a class="navbarItem {{luokka1}}" href="/tilaasossu">Tilaa meidät keikalle</a>
+            <a class="navbarItem {{luokka2}}" href="/mukaan">Tule mukaan</a>
+            <a class="navbarItem {{luokka3}}" href="/ajankohtaista">Ajankohtaista</a>
+          </div>
+          <div id="mobile-button" class="navbarItem"><img src="/static/menu.png"></div>
+          <a href="/eng" class="navbarItem"><img src="/static/english.png"></a>
+        </div>
+
+        <!--Mobiiliversion valikon sisältö -->
+        <div id="mobileLinks">
+          <a class="navbarItem {{luokka0}}" href="/">Etusivu</a>
+          <a class="navbarItem {{luokka1}}" href="/tilaasossu">Tilaa meidät keikalle</a>
+          <a class="navbarItem {{luokka2}}" href="/mukaan">Tule mukaan</a>
+          <a class="navbarItem {{luokka3}}" href="/ajankohtaista">Ajankohtaista</a>
+        </div>
+      </div>
+
+      <div class="centerBox">{% block content %}{% endblock %}</div>
+
+      <footer class="footer">
+        <p>Savolaisen Osakunnan Soitannollinen Seura SOSSu ry</p>
+        <p>sossu.orkesteri@gmail.com</p>
+        <p>Mannerheimintie 5 A</p>
+        <p>00100 Helsinki</p>
+        <br>
+        <a href="https://www.instagram.com/sossuorkesteri/"><img class="social-media-logos" src="/static/ig-48x48.png"></a>
+        <a href="https://www.facebook.com/SOSSu.orkesteri"><img class="social-media-logos" src="/static/fb-48x48.png"></a>
+      </footer>
     </div>
-
-    <!--Mobiiliversion valikon sisältö -->
-    <div class="mobile-navbar">
-      <ul class="mobileLinks">
-      <li class="mobileChild"><a href="/tilaasossu">Tilaa meidät keikalle</a></li>
-      <li class="mobileChild"><a href="/mukaan">Tule mukaan</a></li>
-      <li class="mobileChild"><a href="/ajankohtaista">Ajankohtaista</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <br>
-  <div class="centerBox">{% block content %}{% endblock %}</div>
-  <br>
-  <footer class="footer">
-    <p>Savolaisen Osakunnan Soitannollinen Seura SOSSu ry</p>
-    <p>sossu.orkesteri@gmail.com</p>
-    <p>Mannerheimintie 5 A</p>
-    <p>00100 Helsinki</p>
-    <br>
-    <a href="https://www.instagram.com/sossuorkesteri/"><img class="social-media-logos" src="/static/ig-48x48.png"></a>
-    <a href="https://www.facebook.com/SOSSu.orkesteri"><img class="social-media-logos" src="/static/fb-48x48.png"></a>
-  </footer>
-</div>
 
     <script>
-      window.onscroll = function() {stickyNavBar()};
-
-      var navbar = document.getElementById("navbar");
-      var sticky = navbar.offsetTop;
-
-      function stickyNavBar() {
-        if (window.pageYOffset >= sticky) {
-          navbar.classList.add("sticky")
-        } else {
-          navbar.classList.remove("sticky");
-        }
-      }
-
-      var mobileMenuBtn = document.querySelector("#mobile-button");
-      var mobileMenu = document.querySelector(".mobile-navbar");
+      var mobileMenuBtn = document.getElementById("mobile-button");
+      var mobileMenu = document.getElementById("mobileLinks");
 
       mobileMenuBtn.addEventListener("click", () => {
-        if (mobileMenu.style.display === "flex") {
+        if (mobileMenu.style.display === "grid") {
           mobileMenu.style.display = "none";
         } else {
-          mobileMenu.style.display = "flex";
+          mobileMenu.style.display = "grid";
         }
       });
-
-
-
     </script>
   </body>
 </html>
