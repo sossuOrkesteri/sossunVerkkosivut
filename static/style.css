@@ -22,8 +22,12 @@ body {
 
 .centerBox {
   margin: 20px 0;
-  padding: 5px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   text-align: left;
+}
+
+.centerBox p {
+  margin-top: 0px;
 }
 
 .footer {
@@ -31,6 +35,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  max-width: fit-content;
   text-decoration: none;
 }
 
@@ -96,6 +101,10 @@ body {
 p, h3, h2 {
   font-family: Tahoma;
   text-decoration: none;
+}
+
+h2{
+  margin-top: 0px;
 }
 
 .social-media-logos {
