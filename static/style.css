@@ -17,12 +17,12 @@ body {
 /* General styling of the highest level elements */
 .header, #navbar, .centerBox, .footer{
   background-color: #FDD6FE;
-  box-shadow: 2px 4px 4px 4px rgba(0,0,0,.5);
+  box-shadow: .2ch .4ch .4ch .4ch rgba(0,0,0,.5);
 }
 
 .centerBox {
-  margin: 20px 0;
-  padding: 20px 20px 20px 20px;
+  margin: 2ch 0;
+  padding: 2ch;
   text-align: left;
 }
 
@@ -31,7 +31,7 @@ body {
 }
 
 .footer {
-  padding: max(20px);
+  padding: 2ch;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -40,7 +40,7 @@ body {
 }
 
 .footer p {
-  margin: 3px;
+  margin: 1ex;
 }
 
 .header {
@@ -63,7 +63,7 @@ body {
 
 #navbar-inner {
   display: grid;
-  grid-template-columns: 1fr 50px;
+  grid-template-columns: 1fr 3em;
   grid-template-rows: 3em;
 }
 
@@ -91,7 +91,7 @@ body {
   text-align: left;
   justify-content: left;
   white-space: nowrap;
-  text-indent: 20px;
+  text-indent: 2ch;
 }
 
 .active {
@@ -104,17 +104,17 @@ p, h3, h2 {
 }
 
 h2{
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .social-media-logos {
-  padding: 10px;
+  padding: 1ch;
   align-items: center;
 }
 
 #mobile-button {
   display: none;
-  width: 50px;
+  width: 3em;
 }
 
 #mobileLinks {
@@ -130,7 +130,6 @@ h2{
   #mobile-button {
     display: flex;
   }
-
 
   #navbarLinks {
     display: none;
