@@ -120,7 +120,7 @@ h2{
 #mobileLinks {
   display: none;
   position: absolute; /* To render menu on top of other content*/
-  grid-auto-rows: 2em;
+  grid-auto-rows: 3em;
   width: 100%;
   box-shadow: inherit;
   background-color: inherit;
