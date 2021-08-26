@@ -1,4 +1,4 @@
-import json, time, requests, re
+import json, time, requests, re, os
 
 def read_data_from_file(filename):
     with open(filename, "r") as file:
@@ -8,11 +8,14 @@ def write_data_to_file(filename, data):
     with open(filename, "w") as file:
         file.write(json.dumps(data, indent=4))
 
-try:
-    secrets = read_data_from_file("secrets.json")
-except FileNotFoundError:
-    secrets = {"user_id": "", "access_token": "", "last_refresh": 0}
-    write_data_to_file("secrets.json", secrets)
+secrets = {
+    "user_id": os.getenv("USER_ID"),
+    "access_token": os.getenv("ACCESS_TOKEN")
+}
+if "last_refresh" in os.environ:
+    secrets["last_refresh"] = os.gerenv("LAST_REFRESH")
+else:
+    secrets["last_refresh"] = 0
 
 def call(url, payload):
     """ Calls the instagram Basic Display API with the given url and payload.
@@ -58,6 +61,6 @@ def fetch_instagram_media():
 
 if __name__ == "__main__":
     secrets = refresh_instagram_access_token()
-    write_data_to_file("secrets.json", secrets)
+    os.environ["LAST_REFRESH"] = str(secrets["last_refresh"])
     media = fetch_instagram_media()
     write_data_to_file("instagram_media.json", media)
