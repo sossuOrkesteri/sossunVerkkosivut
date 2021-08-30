@@ -41,6 +41,8 @@ def format_media(media):
 
         # remove hashtags from the ends of captions
         entry["caption"] = re.sub("(\s?#\S+)*$", "", entry["caption"])
+        # replace @ signs in email addesses to avoid spam
+        entry["caption"] = re.sub("@gmail.com", "\[at\]gmail.com", entry["caption"])
     return media
 
 def fetch_instagram_media():
