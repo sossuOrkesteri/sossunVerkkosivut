@@ -1,2 +1,3 @@
-bind = "0.0.0.0:8080"
-workers = 2
+bind = "unix:app.sock"
+workers = 3
+umask = 0o007
