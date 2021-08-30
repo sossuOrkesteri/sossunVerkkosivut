@@ -7,29 +7,29 @@ body {
   padding: 0;
 }
 
-.website {
+#website {
   width: min(90%, 50em);
   margin-left: auto;
   margin-right: auto;
 }
 
 /* General styling of the highest level elements */
-.header, #navbar, .centerBox, .footer{
+#header, #navbar, #centerBox, #footer{
   background-color: #FDD6FE;
   box-shadow: .2ch .4ch .4ch .4ch rgba(0,0,0,.5);
 }
 
-.centerBox {
+#centerBox {
   margin: 2ch 0;
   padding: 2ch;
   text-align: left;
 }
 
-.centerBox p {
+#centerBox p {
   margin-top: 0px;
 }
 
-.footer {
+#footer {
   padding: 2ch;
   margin-left: auto;
   margin-right: auto;
@@ -38,11 +38,11 @@ body {
   text-decoration: none;
 }
 
-.footer p {
+#footer p {
   margin: 1ex;
 }
 
-.header {
+#header {
   display: flex;
 }
 
