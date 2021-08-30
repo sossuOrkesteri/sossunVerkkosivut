@@ -14,18 +14,18 @@ body {
 }
 
 /* General styling of the highest level elements */
-#header, #navbar, #centerBox, #footer{
+#header, #navbar, #centerbox, #footer{
   background-color: #FDD6FE;
   box-shadow: .2ch .4ch .4ch .4ch rgba(0,0,0,.5);
 }
 
-#centerBox {
+#centerbox {
   margin: 2ch 0;
   padding: 2ch;
   text-align: left;
 }
 
-#centerBox p {
+#centerbox p {
   margin-top: 0px;
 }
 
@@ -46,7 +46,7 @@ body {
   display: flex;
 }
 
-#header-picture{
+#headerPicture{
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -60,7 +60,7 @@ body {
   width: 100%;
 }
 
-#navbar-inner {
+#navbarInner {
   display: grid;
   grid-template-columns: 1fr 3em;
   grid-template-rows: 3em;
@@ -111,7 +111,7 @@ h2{
   align-items: center;
 }
 
-#mobile-button {
+#mobileButton {
   display: none;
   width: 3em;
 }
@@ -126,7 +126,7 @@ h2{
 }
 
 @media (max-width: 600px) {
-  #mobile-button {
+  #mobileButton {
     display: flex;
   }
 

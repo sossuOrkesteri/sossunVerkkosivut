@@ -13,18 +13,18 @@
   <body>
     <div id="website">
       <div id="header">
-        <img id="header-picture" src="/static/img-banner.jpg">
+        <img id="headerPicture" src="/static/img-banner.jpg">
       </div>
 
       <div id="navbar">
-        <div id="navbar-inner">
+        <div id="navbarInner">
           <div id="navbarLinks">
             <a class="navbarItem {{luokka0}}" href="/">Etusivu</a>
             <a class="navbarItem {{luokka1}}" href="/tilaasossu">Tilaa meidät keikalle</a>
             <a class="navbarItem {{luokka2}}" href="/mukaan">Tule mukaan</a>
             <a class="navbarItem {{luokka3}}" href="/ajankohtaista">Ajankohtaista</a>
           </div>
-          <div id="mobile-button" class="navbarItem"><img src="/static/menu.png"></div>
+          <div id="mobileButton" class="navbarItem"><img src="/static/menu.png"></div>
           <a href="/eng" class="navbarItem"><img src="/static/english.png"></a>
         </div>
 
@@ -37,7 +37,7 @@
         </div>
       </div>
 
-      <div id="centerBox">{% block content %}{% endblock %}</div>
+      <div id="centerbox">{% block content %}{% endblock %}</div>
 
       <footer id="footer">
         <p>Savolaisen Osakunnan Soitannollinen Seura SOSSu ry</p>
@@ -51,17 +51,17 @@
     </div>
 
     <script>
-      var mobileMenuBtn = document.getElementById("mobile-button");
+      var mobileMenuBtn = document.getElementById("mobileButton");
       var mobileMenu = document.getElementById("mobileLinks");
 
       mobileMenuBtn.addEventListener("click", () => {
         if (mobileMenu.style.display === "grid") {
           mobileMenu.style.display = "none";
-          document.getElementById("mobile-button").style.backgroundColor='#FDD6FE';
+          document.getElementById("mobileButton").style.backgroundColor='#FDD6FE';
 
         } else {
           mobileMenu.style.display = "grid";
-          document.getElementById("mobile-button").style.backgroundColor='#FA9CC2';
+          document.getElementById("mobileButton").style.backgroundColor='#FA9CC2';
         }
       });
     </script>
