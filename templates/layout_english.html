@@ -13,18 +13,18 @@
   <body>
     <div id="website">
       <div id="header">
-        <img id="header-picture" src="/static/img-banner.jpg"  object-fit="contain">
+        <img id="headerPicture" src="/static/img-banner.jpg"  object-fit="contain">
       </div>
 
       <div id="navbar">
-        <div id="navbar-inner">
+        <div id="navbarInner">
           <div id="navbarLinks">
             <a class="navbarItem {{luokka0}}" href="/eng">Main</a>
             <a class="navbarItem {{luokka1}}" href="/bookus">Book us</a>
             <a class="navbarItem {{luokka2}}" href="/joinsossu">Join SOSSu</a>
             <a class="navbarItem {{luokka3}}" href="/socialmedia">Social Media</a>
           </div>
-          <div id="mobile-button" class="navbarItem"><img src="/static/menu.png"></div>
+          <div id="mobileButton" class="navbarItem"><img src="/static/menu.png"></div>
           <a href="/" class="navbarItem"><img src="/static/suomi.png"></a>
         </div>
 
@@ -36,7 +36,7 @@
           <a class="navbarItem {{luokka3}}" href="/ajankohtaista">Social Media</a>
         </div>
       </div>
-      <div id="centerBox">{% block content %}{% endblock %}</div>
+      <div id="centerbox">{% block content %}{% endblock %}</div>
       <footer id="footer">
         <p>Savolaisen Osakunnan Soitannollinen Seura SOSSu ry</p>
         <p>sossu.orkesteri [at] gmail.com</p>
@@ -49,16 +49,16 @@
     </div>
 
     <script>
-      var mobileMenuBtn = document.getElementById("mobile-button");
+      var mobileMenuBtn = document.getElementById("mobileButton");
       var mobileMenu = document.getElementById("mobileLinks");
 
       mobileMenuBtn.addEventListener("click", () => {
         if (mobileMenu.style.display === "grid") {
           mobileMenu.style.display = "none";
-          document.getElementById("mobile-button").style.backgroundColor='#FDD6FE';
+          document.getElementById("mobileButton").style.backgroundColor='#FDD6FE';
         } else {
           mobileMenu.style.display = "grid";
-          document.getElementById("mobile-button").style.backgroundColor='#FA9CC2';
+          document.getElementById("mobileButton").style.backgroundColor='#FA9CC2';
         }
       });
     </script>
