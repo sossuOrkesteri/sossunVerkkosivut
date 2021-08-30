@@ -7,7 +7,6 @@ body {
   padding: 0;
 }
 
-/* se div mihin lisätään sivuston tekstit */
 .website {
   width: min(90%, 50em);
   margin-left: auto;

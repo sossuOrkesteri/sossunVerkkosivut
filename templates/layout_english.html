@@ -55,8 +55,10 @@
       mobileMenuBtn.addEventListener("click", () => {
         if (mobileMenu.style.display === "grid") {
           mobileMenu.style.display = "none";
+          document.getElementById("mobile-button").style.backgroundColor='#FDD6FE';
         } else {
           mobileMenu.style.display = "grid";
+          document.getElementById("mobile-button").style.backgroundColor='#FA9CC2';
         }
       });
     </script>
