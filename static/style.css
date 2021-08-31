@@ -44,12 +44,24 @@ body {
 
 #header {
   display: flex;
+  position: relative;
 }
 
 #headerPicture{
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+#sossuLogo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 80%;
+  border-radius: 50%;
+  padding: 1%;
+  margin: auto 5%;
+  background-color: inherit;
 }
 
 #navbar {
@@ -102,7 +114,7 @@ p, h3, h2 {
   text-decoration: none;
 }
 
-h2{
+h2 {
   margin-top: 0;
 }
 
