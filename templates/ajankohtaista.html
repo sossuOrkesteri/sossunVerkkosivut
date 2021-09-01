@@ -13,7 +13,13 @@
          target="_blank"
          style="position: relative">
         <img class="some-picture-overlay"
-             src="static/ig-logo.svg">
+          {% if entry["media_type"] == "IMAGE" %}
+             src="static/media_type_indicators/image.svg"
+          {% elif entry["media_type"] == "CAROUSEL_ALBUM" %}
+             src="static/media_type_indicators/album.svg"
+          {% elif entry["media_type"] == "VIDEO" %}
+             src="static/media_type_indicators/video.svg"
+          {% endif %}>
         <img class="some-picture"
              alt="{{ entry["caption"] }}"
           {% if entry["media_type"] == "IMAGE"
@@ -47,12 +53,10 @@
     function showmore(elem) {
       let captionLong = elem.parentNode.querySelector(".some-caption#long");
       captionLong.style.display = "block";
-      console.log("showmore");
     }
 
     function showless(elem) {
       elem.style.display = "none";
-      console.log("showless");
     }
   </script>
 {% endblock %}
