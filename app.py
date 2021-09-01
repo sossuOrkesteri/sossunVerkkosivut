@@ -39,3 +39,12 @@ def ajankohtaista():
     except FileNotFoundError as err:
         return render_template("error.html", msg=str(err))
     return render_template('ajankohtaista.html', media=media, luokka3="active")
+
+@app.route("/socialmedia")
+def some_page():
+    try:
+        file = open("instagram_media.json", "r")
+        media = json.loads(file.read())
+    except FileNotFoundError as err:
+        return render_template("error.html", msg=str(err))
+    return render_template('social_media_en.html', media=media, luokka3="active")
