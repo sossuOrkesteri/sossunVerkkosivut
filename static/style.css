@@ -94,6 +94,10 @@ body {
   text-align: center;
 }
 
+.navbarItem > img {
+  width: 70%;
+}
+
 .navbarItem:hover {
   background-color: #FA9CC2;
 }
@@ -121,6 +125,7 @@ h2 {
 .social-media-logos {
   padding: 1ch;
   align-items: center;
+  height: 3em;
 }
 
 #mobileButton {
