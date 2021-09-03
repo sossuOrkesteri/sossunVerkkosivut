@@ -3,48 +3,54 @@ import json
 
 app = Flask(__name__)
 
+class NavbarItem():
+    def __init__(self, url, template, title):
+        self.url = url
+        self.title = title
+        self.template = template
 
-@app.route("/")
-def index():
-    return render_template("index.html", luokka0="active")
+# Navbar definitions in different languages
+navbars = {
+    "fi": [
+        NavbarItem("etusivu",       "index.html",         "Etusivu"),
+        NavbarItem("tilaa",         "tilaa_sossu.html",   "Tilaa meidät keikalle"),
+        NavbarItem("mukaan",        "tule_mukaan.html",   "Tule mukaan"),
+        NavbarItem("ajankohtaista", "ajankohtaista.html", "Ajankohtaista"),
+    ],
+    "en": [
+        NavbarItem("main",          "english_main.html",  "Main"),
+        NavbarItem("bookus",        "book_sossu.html",    "Book us"),
+        NavbarItem("join",          "join_sossu.html",    "Join SOSSu"),
+        NavbarItem("socialmedia",   "ajankohtaista.html", "Social Media"),
+    ]
+}
 
-@app.route("/eng")
-def eng_index():
-    return render_template("english_main.html", luokka0="active")
+def getNavbarDict(lang):
+    return {item.url:item.title for item in navbars[lang]}
 
-#tilaaSossuKeikalle
-@app.route("/tilaasossu")
-def tilaa():
-    return render_template("tilaa_sossu.html", luokka1="active")
+# Default routes, defined by navbar items
+@app.route("/<page>")
+@app.route("/", defaults={"page": navbars["fi"][0].url})
+def getPage(page):
+    for lang in ["en", "fi"]:
+        for index,item in enumerate(navbars[lang]):
+            if page == item.url:
+                return render_template(item.template,
+                        navbar=getNavbarDict(lang),
+                        active=index,
+                        lang=lang)
+    return render_template("error.html", navbar=getNavbarDict("en"), msg="Page not found")
 
-@app.route("/bookus")
-def order():
-    return render_template("book_sossu.html", luokka1="active",)
-
-#mitenSoittajaksi
-@app.route("/mukaan")
-def mukaan():
-    return render_template("tule_mukaan.html", luokka2="active")
-
-@app.route("/joinsossu")
-def join():
-    return render_template("join_sossu.html", luokka2="active")
-
-#ajankohtaista
-@app.route("/ajankohtaista")
-def ajankohtaista():
+# social media tab is defined explicitly because of the extra data it needs
+@app.route("/ajankohtaista", defaults={"lang": "fi"})
+@app.route("/socialmedia", defaults={"lang": "en"})
+def some(lang):
     try:
         file = open("instagram_media.json", "r")
         media = json.loads(file.read())
     except FileNotFoundError as err:
         return render_template("error.html", msg=str(err))
-    return render_template('ajankohtaista.html', media=media, luokka3="active")
-
-@app.route("/socialmedia")
-def some_page():
-    try:
-        file = open("instagram_media.json", "r")
-        media = json.loads(file.read())
-    except FileNotFoundError as err:
-        return render_template("error.html", msg=str(err))
-    return render_template('social_media_en.html', media=media, luokka3="active")
+    return render_template('ajankohtaista.html',
+            media=media,
+            lang=lang,
+            navbar=getNavbarDict(lang))
