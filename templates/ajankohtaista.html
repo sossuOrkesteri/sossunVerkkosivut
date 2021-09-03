@@ -6,21 +6,11 @@
 {% endblock %}
 
 {% block content %}
-  {{ super() }}
   {% for entry in media %}
-    <div class="some-entry">
+    <div class="someEntry">
       <a href="{{ entry["permalink"] }}"
-         target="_blank"
-         style="position: relative">
-        <img class="some-picture-overlay"
-          {% if entry["media_type"] == "IMAGE" %}
-             src="static/media_type_indicators/image.svg"
-          {% elif entry["media_type"] == "CAROUSEL_ALBUM" %}
-             src="static/media_type_indicators/album.svg"
-          {% elif entry["media_type"] == "VIDEO" %}
-             src="static/media_type_indicators/video.svg"
-          {% endif %}>
-        <img class="some-picture"
+         target="_blank">
+        <img class="somePicture"
              alt="{{ entry["caption"] }}"
           {% if entry["media_type"] == "IMAGE"
           or entry["media_type"] == "CAROUSEL_ALBUM" %}
@@ -28,22 +18,30 @@
           {% elif entry["media_type"] == "VIDEO" %}
              src={{ entry["thumbnail_url"] }}
           {% endif %}>
+        <img class="somePictureOverlay"
+          {% if entry["media_type"] == "IMAGE" %}
+             src="static/media_type_indicators/image.svg"
+          {% elif entry["media_type"] == "CAROUSEL_ALBUM" %}
+             src="static/media_type_indicators/album.svg"
+          {% elif entry["media_type"] == "VIDEO" %}
+             src="static/media_type_indicators/video.svg"
+          {% endif %}>
       </a>
-      <div class="some-info">
-        <div class="some-timestamp">
+      <div class="someInfo">
+        <div class="someTimestamp">
           <small>{{ entry["timestamp"] }} </small>
         </div>
-        <div class="some-caption" id="short">
+        <div class="someCaptionShort">
           {{ entry["caption"] }}
         </div>
-        <div class="some-caption" id="long" onclick="showless(this)">
+        <div class="someCaptionLong shadow" onclick="showless(this)">
           {{ entry["caption"] }}
         </div>
-        <div class="some-caption" id="dummy">
+        <div class="someCaptionDummy">
           {{ entry["caption"] }}
           <div></div>
         </div>
-        <div class="some-showmore" onclick="showmore(this)">
+        <div class="someShowmore" onclick="showmore(this)">
           <small> näytä lisää </small>
         </div>
       </div>
@@ -51,7 +49,7 @@
   {% endfor %}
   <script>
     function showmore(elem) {
-      let captionLong = elem.parentNode.querySelector(".some-caption#long");
+      let captionLong = elem.parentNode.querySelector(".someCaptionLong");
       captionLong.style.display = "block";
     }
 

@@ -1,3 +1,8 @@
+:root {
+  --regular-pink: #ffd6f1;
+  --active-pink: #f296d4;
+}
+
 body {
   background: url(tausta.jpg);
   background-size: 500px 500px;
@@ -14,8 +19,11 @@ body {
 }
 
 /* General styling of the highest level elements */
-#header, #navbar, #centerbox, #footer{
-  background-color: #ffd6f1;
+#header, #navbar, #centerbox, #footer, #sossuLogo, #mobileLinks {
+  background-color: var(--regular-pink);
+}
+
+.shadow {
   box-shadow: .2ch .4ch .4ch .4ch rgba(0,0,0,.5);
 }
 
@@ -61,7 +69,6 @@ body {
   border-radius: 50%;
   padding: 1%;
   margin: auto 5%;
-  background-color: inherit;
 }
 
 #navbar {
@@ -99,7 +106,7 @@ body {
 }
 
 .navbarItem:hover {
-  background-color: #FA9CC2;
+  background-color: var(--active-pink);
 }
 
 #mobileLinks > .navbarItem {
@@ -139,7 +146,6 @@ h2 {
   grid-auto-rows: 3em;
   width: 100%;
   box-shadow: inherit;
-  background-color: inherit;
 }
 
 @media (max-width: 600px) {
