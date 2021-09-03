@@ -1,4 +1,18 @@
 <!DOCTYPE html>
+
+{# Macro to build the list of navbar items #}
+{% macro navbarItems() -%}
+  {% for url,title in navbar.items() %}
+    <a href="{{url}}"
+      class="navbarItem
+      {% if active == loop.index0 %}
+        active
+      {% endif %}">
+      {{title}}
+    </a>
+  {% endfor %}
+{%- endmacro%}
+
 <html lang="fi">
   <head>
     {% block head %}
@@ -20,21 +34,18 @@
       <div id="navbar" class="shadow">
         <div id="navbarInner">
           <div id="navbarLinks">
-            <a class="navbarItem {{luokka0}}" href="/">Etusivu</a>
-            <a class="navbarItem {{luokka1}}" href="/tilaasossu">Tilaa meidät keikalle</a>
-            <a class="navbarItem {{luokka2}}" href="/mukaan">Tule mukaan</a>
-            <a class="navbarItem {{luokka3}}" href="/ajankohtaista">Ajankohtaista</a>
+            {{ navbarItems() }}
           </div>
           <div id="mobileButton" class="navbarItem"><img src="/static/menu.svg"></div>
-          <a href="/eng" class="navbarItem"><img src="/static/flags/english.svg"></a>
+          {% if lang == "fi" %}
+            <a href="/main" class="navbarItem"><img src="/static/flags/english.svg"></a>
+          {% elif lang == "en" %}
+            <a href="/" class="navbarItem"><img src="/static/flags/finnish.svg"></a>
+          {% endif %}
         </div>
 
-        <!--Mobiiliversion valikon sisältö -->
         <div id="mobileLinks">
-          <a class="navbarItem {{luokka0}}" href="/">Etusivu</a>
-          <a class="navbarItem {{luokka1}}" href="/tilaasossu">Tilaa meidät keikalle</a>
-          <a class="navbarItem {{luokka2}}" href="/mukaan">Tule mukaan</a>
-          <a class="navbarItem {{luokka3}}" href="/ajankohtaista">Ajankohtaista</a>
+          {{ navbarItems() }}
         </div>
       </div>
 
