@@ -42,7 +42,11 @@
           <div></div>
         </div>
         <div class="someShowmore" onclick="showmore(this)">
-          <small> näytä lisää </small>
+          {% if lang == "fi" %}
+            <small> näytä lisää </small>
+          {% else %}
+            <small> show more </small>
+          {% endif %}
         </div>
       </div>
     </div>
