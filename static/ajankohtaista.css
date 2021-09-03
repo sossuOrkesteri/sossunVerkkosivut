@@ -1,90 +1,100 @@
-.some-picture {
+:root {
+  --line-height: 1.2em;
+}
+
+.somePicture {
   width: 100%;
   height: 100%;
+  position: absolute;
   background: #000000;
   object-fit: contain;
   cursor: pointer;
 }
 
-.some-picture-overlay {
-  width: 10%;
-  height: 10%;
+.somePictureOverlay {
+  width: 1.5em;
+  height: 1.5em;
   position: absolute;
-  top: 5%;
-  right: 5%;
+  top: .5em;
+  right: .5em;
 }
 
-.some-entry {
-  background-color: #FDD6FE;
-  margin-bottom: 20px;
+.someEntry {
+  margin-bottom: inherit;
   display: grid;
-  grid-template-columns: min(20vw, 196px) 1fr;
-  grid-template-rows: min(20vw, 196px);
-  min-height: 50px;
-  column-gap: 4px;
-  z-index: -1;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1ch;
 }
 
-.some-entry:last-of-type {
+.someEntry > a {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: calc(6 * var(--line-height));
+  padding-bottom: 100%;
+}
+
+.someEntry:last-of-type {
   margin-bottom: 0;
 }
 
-.some-info {
+.someInfo {
   margin: auto 0;
   position: relative;
   width: 100%;
 }
 
-.some-info > * {
-  padding-left: 2px;
-  padding-right: 2px;
-}
-
-.some-timestamp {
+.someTimestamp {
   position: absolute;
   bottom: 100%;
 }
 
-.some-caption {
-  line-height: 1.2em;
+.someCaptionShort, .someCaptionLong, .someCaptionDummy {
+  line-height: var(--line-height);
   hyphens: auto;
 }
 
-.some-caption#short {
+/* The caption limited to 3 lines of text. */
+.someCaptionShort {
   position: relative;
-  height: 3.6em;
+  height: calc(3 * var(--line-height));
   overflow: hidden;
 }
 
-.some-caption#long {
+/* The entire caption with no line limitation. */
+.someCaptionLong {
   position: absolute;
-  background-color: #FA9CC2;
+  background-color: var(--active-pink);
   top: 0;
-  z-index: 2;
+  z-index: 2; /* to place it on top of the "show more" button */
   cursor: pointer;
   display: none;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-.some-caption#dummy {
+/* Invisible element to measure the number of lines the caption text takes */
+.someCaptionDummy {
   position: absolute;
   visibility: hidden;
   top: 0;
 }
 
-.some-caption#dummy > div {
+/* This element covers the "show more" button when there is nothing more to show. */
+.someCaptionDummy > div {
   position: absolute;
-  background-color: #FDD6FE;
-  top: max(3.6em, min(100%, 4.8em));
+  background-color: var(--regular-pink);
+  /* if text spans less than 3 lines, place this element under the 3rd line
+   * where it covers the "show more" button.
+   * otherwise (there's more to show), place this element under the 4th line
+   * where it covers nothing */
+  top: max(calc(3 * var(--line-height)), min(100%, calc(4 * var(--line-height))));
   width: 100%;
-  height: 1.2em;
+  height: var(--line-height);
   visibility: visible;
-  z-index: 1;
+  z-index: 1; /* to place it on top of the "show more" button */
 }
 
-.some-showmore {
+.someShowmore {
   position: absolute;
-  background-color: #FDD6FE;
   top: 100%;
   width: 100%;
   cursor: pointer;

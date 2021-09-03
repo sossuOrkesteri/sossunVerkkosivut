@@ -12,12 +12,12 @@
 
   <body>
     <div id="website">
-      <div id="header">
+      <div id="header" class="shadow">
         <img id="headerPicture" src="/static/img-banner.jpg">
         <img id="sossuLogo" src="/static/sossulogo.svg">
       </div>
 
-      <div id="navbar">
+      <div id="navbar" class="shadow">
         <div id="navbarInner">
           <div id="navbarLinks">
             <a class="navbarItem {{luokka0}}" href="/">Etusivu</a>
@@ -38,9 +38,9 @@
         </div>
       </div>
 
-      <div id="centerbox">{% block content %}{% endblock %}</div>
+      <div id="centerbox" class="shadow">{% block content %}{% endblock %}</div>
 
-      <footer id="footer">
+      <footer id="footer" class="shadow">
         <p>Savolaisen Osakunnan Soitannollinen Seura SOSSu ry</p>
         <p>sossu.orkesteri [at] gmail.com</p>
         <p>Mannerheimintie 5 A</p>
