@@ -18,6 +18,13 @@ body {
   margin-right: auto;
 }
 
+#sisaltoKuvat{
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 /* General styling of the highest level elements */
 #header, #navbar, #centerbox, #footer, #sossuLogo, #mobileLinks {
   background-color: var(--regular-pink);
