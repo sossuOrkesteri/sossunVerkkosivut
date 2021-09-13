@@ -14,10 +14,10 @@ class NavbarItem():
 navbars = {
     "fi": [
         NavbarItem("etusivu",       "index.html",         "Etusivu",            "tulemukaan.jpg"),
-        NavbarItem("tilaa",         "tilaa_sossu.html",   "Tilaa meidät keikalle", "tilaameidat.jpg"),
+        NavbarItem("tilaa",         "tilaa_sossu.html",   "Tilaa meidät", "tilaameidat.jpg"),
         NavbarItem("mukaan",        "tule_mukaan.html",   "Tule mukaan", "tulemukaan.jpg"),
         NavbarItem("ajankohtaista", "ajankohtaista.html", "Ajankohtaista", "ajankohtaista.jpg"),
-        NavbarItem("sitsilaulu22", "sitsilaulu22.html", "Sitsilaulukonsertti 2022", "sitsilaulut.jpg"),
+        NavbarItem("sitsilaulu22", "sitsilaulu22.html", "Sitsilaulukonsertti", "sitsilaulut.jpg"),
     ],
     "en": [
         NavbarItem("main",          "english_main.html",  "Main", "tulemukaan.jpg"),
