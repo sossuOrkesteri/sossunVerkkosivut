@@ -13,14 +13,14 @@ class NavbarItem():
 # Navbar definitions in different languages
 navbars = {
     "fi": [
-        NavbarItem("etusivu",       "index.html",         "Etusivu",            "tulemukaan.jpg"),
+        NavbarItem("etusivu",       "index.html",         "Etusivu",            "etusivu.jpg"),
         NavbarItem("tilaa",         "tilaa_sossu.html",   "Tilaa meidät", "tilaameidat.jpg"),
         NavbarItem("mukaan",        "tule_mukaan.html",   "Tule mukaan", "tulemukaan.jpg"),
         NavbarItem("ajankohtaista", "ajankohtaista.html", "Ajankohtaista", "ajankohtaista.jpg"),
         NavbarItem("sitsilaulu22", "sitsilaulu22.html", "Sitsilaulukonsertti", "sitsilaulut.jpg"),
     ],
     "en": [
-        NavbarItem("main",          "english_main.html",  "Main", "tulemukaan.jpg"),
+        NavbarItem("main",          "english_main.html",  "Main", "etusivu.jpg"),
         NavbarItem("bookus",        "book_sossu.html",    "Book us", "tilaameidat.jpg"),
         NavbarItem("join",          "join_sossu.html",    "Join SOSSu", "tulemukaan.jpg"),
         NavbarItem("socialmedia",   "ajankohtaista.html", "Social Media", "ajankohtaista.jpg"),
