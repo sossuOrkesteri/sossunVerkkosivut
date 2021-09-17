@@ -99,6 +99,10 @@ body {
   grid-auto-columns: 1fr;
 }
 
+#navbarLinks > .navbarItem {
+  padding: 0 .5ch;
+}
+
 .navbarItem {
   text-decoration: none;
   color: black;
