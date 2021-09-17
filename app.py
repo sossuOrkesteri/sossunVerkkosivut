@@ -4,26 +4,25 @@ import json
 app = Flask(__name__)
 
 class NavbarItem():
-    def __init__(self, url, template, title, picture):
+    def __init__(self, url, template, title):
         self.url = url
         self.title = title
         self.template = template
-        self.picture = picture
 
 # Navbar definitions in different languages
 navbars = {
     "fi": [
-        NavbarItem("etusivu",       "index.html",         "Etusivu",            "etusivu.jpg"),
-        NavbarItem("tilaa",         "tilaa_sossu.html",   "Tilaa meidät", "tilaameidat.jpg"),
-        NavbarItem("mukaan",        "tule_mukaan.html",   "Tule mukaan", "tulemukaan.jpg"),
-        NavbarItem("ajankohtaista", "ajankohtaista.html", "Ajankohtaista", "ajankohtaista.jpg"),
-        NavbarItem("sitsilaulu22", "sitsilaulu22.html", "Sitsilaulukonsertti", "sitsilaulut.jpg"),
+        NavbarItem("etusivu",       "index.html",         "Etusivu"),
+        NavbarItem("tilaa",         "tilaa_sossu.html",   "Tilaa meidät"),
+        NavbarItem("mukaan",        "tule_mukaan.html",   "Tule mukaan"),
+        NavbarItem("ajankohtaista", "ajankohtaista.html", "Ajankohtaista"),
+        NavbarItem("sitsilaulu22",  "sitsilaulu22.html",  "Sitsilaulukonsertti"),
     ],
     "en": [
-        NavbarItem("main",          "english_main.html",  "Main", "etusivu.jpg"),
-        NavbarItem("bookus",        "book_sossu.html",    "Book us", "tilaameidat.jpg"),
-        NavbarItem("join",          "join_sossu.html",    "Join SOSSu", "tulemukaan.jpg"),
-        NavbarItem("socialmedia",   "ajankohtaista.html", "Social Media", "ajankohtaista.jpg"),
+        NavbarItem("main",          "english_main.html",  "Main"),
+        NavbarItem("bookus",        "book_sossu.html",    "Book us"),
+        NavbarItem("join",          "join_sossu.html",    "Join SOSSu"),
+        NavbarItem("socialmedia",   "ajankohtaista.html", "Social Media"),
     ]
 }
 
@@ -37,12 +36,10 @@ def getPage(page):
     for lang in ["en", "fi"]:
         for index,item in enumerate(navbars[lang]):
             if page == item.url:
-                print(item.picture)
                 return render_template(item.template,
                         navbar=getNavbarDict(lang),
                         active=index,
-                        lang=lang,
-                        pictureId=item.picture)
+                        lang=lang)
     return render_template("error.html", navbar=getNavbarDict("en"), msg="Page not found")
 
 # social media tab is defined explicitly because of the extra data it needs
@@ -58,5 +55,4 @@ def some(lang):
             media=media,
             lang=lang,
             active=3,
-            navbar=getNavbarDict(lang),
-            pictureId="ajankohtaista.jpg")
+            navbar=getNavbarDict(lang))
