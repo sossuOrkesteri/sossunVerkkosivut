@@ -62,17 +62,17 @@
     </div>
 
     <script>
-      var mobileMenuBtn = document.getElementById("mobileButton");
-      var mobileMenu = document.getElementById("mobileLinks");
+      var mobileButton = document.getElementById("mobileButton");
+      var mobileLinks = document.getElementById("mobileLinks");
 
-      mobileMenuBtn.addEventListener("click", () => {
-        if (mobileMenu.style.display === "grid") {
-          mobileMenu.style.display = "none";
-          document.getElementById("mobileButton").style.backgroundColor='#ffd6f1';
+      mobileButton.addEventListener("click", () => {
+        if (mobileLinks.style.display === "grid") {
+          mobileLinks.style.display = "none";
+          mobileButton.classList.remove("active");
 
         } else {
-          mobileMenu.style.display = "grid";
-          document.getElementById("mobileButton").style.backgroundColor='#f296d4';
+          mobileLinks.style.display = "grid";
+          mobileButton.classList.add("active");
         }
       });
     </script>

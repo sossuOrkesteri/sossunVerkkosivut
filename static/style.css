@@ -152,6 +152,10 @@ h2 {
   width: 3em;
 }
 
+#mobileButton.active {
+  background-color: var(--active-pink);
+}
+
 #mobileLinks {
   display: none;
   position: absolute; /* To render menu on top of other content*/
