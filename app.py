@@ -57,5 +57,6 @@ def some(lang):
     return render_template('ajankohtaista.html',
             media=media,
             lang=lang,
+            active=3,
             navbar=getNavbarDict(lang),
             pictureId="ajankohtaista.jpg")
