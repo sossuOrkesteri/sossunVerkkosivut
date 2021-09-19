@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import json
 
 app = Flask(__name__)
@@ -26,33 +26,47 @@ navbars = {
     ]
 }
 
-def getNavbarDict(lang):
-    return {item.url:item.title for item in navbars[lang]}
-
-# Default routes, defined by navbar items
-@app.route("/<page>")
-@app.route("/", defaults={"page": navbars["fi"][0].url})
-def getPage(page):
+def validateUrl(url):
+    """ Checks if the url is valid.
+    Returns the language code of the navbar that the url was found from
+    and the index of the url in that navbar.
+    Returned index is None if the url is not found in any of the navbars."""
     for lang in ["en", "fi"]:
         for index,item in enumerate(navbars[lang]):
-            if page == item.url:
-                return render_template(item.template,
-                        navbar=getNavbarDict(lang),
-                        active=index,
-                        lang=lang)
-    return render_template("error.html", navbar=getNavbarDict("en"), msg="Page not found")
+            if item.url == url:
+                return lang, index
+    return "en", None
+
+def getErrorPage(msg):
+    return render_template("error.html",
+            navbar=navbars["en"],
+            lang="en",
+            msg=msg)
+
+# Default routes, defined by navbar items
+@app.route("/<url>")
+# No url defaults to the first tab of the finnish navbar
+@app.route("/", defaults={"url": navbars["fi"][0].url})
+def getPage(url, **kwargs):
+    """ Returns the fully rendered html page associated with the given url.
+    Keyword arguments are passed to the to the templating engine. """
+    lang, index = validateUrl(url)
+    if index is None: return getErrorPage("Page not found")
+    page = navbars[lang][index]
+    return render_template(page.template,
+            navbar=navbars[lang],
+            active=index,
+            lang=lang,
+            **kwargs)
 
 # social media tab is defined explicitly because of the extra data it needs
-@app.route("/ajankohtaista", defaults={"lang": "fi"})
-@app.route("/socialmedia", defaults={"lang": "en"})
-def some(lang):
+@app.route("/ajankohtaista")
+@app.route("/socialmedia")
+def getSocialMediaPage():
     try:
         file = open("instagram_media.json", "r")
         media = json.loads(file.read())
     except FileNotFoundError as err:
-        return render_template("error.html", msg=str(err))
-    return render_template('ajankohtaista.html',
-            media=media,
-            lang=lang,
-            active=3,
-            navbar=getNavbarDict(lang))
+        return getErrorPage(str(err))
+    url = request.url_rule.rule[1:] # requested url without the leading slash
+    return getPage(url, media=media)

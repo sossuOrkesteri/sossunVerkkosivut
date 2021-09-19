@@ -2,13 +2,13 @@
 
 {# Macro to build the list of navbar items #}
 {% macro navbarItems() -%}
-  {% for url,title in navbar.items() %}
-    <a href="{{url}}"
+  {% for item in navbar %}
+    <a href="{{item.url}}"
       class="navbarItem
       {% if active == loop.index0 %}
         active
       {% endif %}">
-      {{title}}
+      {{item.title}}
     </a>
   {% endfor %}
 {%- endmacro%}
