@@ -18,12 +18,9 @@ body {
   margin-right: auto;
 }
 
-#sisaltoKuvat{
+.sisaltoKuva {
   width: 100%;
   height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
 }
 
 /* General styling of the highest level elements */
@@ -39,10 +36,6 @@ body {
   margin: 2ch 0;
   padding: 2ch;
   text-align: left;
-}
-
-#centerbox p {
-  margin-top: 0px;
 }
 
 #footer {
@@ -132,13 +125,14 @@ body {
   font-weight: bold;
 }
 
-p, h3, h2, ul, li {
+p, h3, h2 {
   font-family: Tahoma;
   text-decoration: none;
+  margin-top: 0;
 }
 
-h2 {
-  margin-top: 0;
+p:last-of-type {
+  margin-bottom: 0;
 }
 
 .social-media-logos {
