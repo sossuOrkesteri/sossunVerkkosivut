@@ -13,6 +13,13 @@
   {% endfor %}
 {%- endmacro%}
 
+{# Macro to get the title of the currently active tab #}
+{% macro activeTitle() -%}
+  {% if active is defined %}
+    {{ navbar[active].title}}
+  {% endif %}
+{%- endmacro%}
+
 <html lang="{{ lang }}">
   <head>
     {% block head %}
@@ -37,6 +44,7 @@
             {{ navbarItems() }}
           </div>
           <div id="mobileButton" class="navbarItem"><img src="/static/menu.svg"></div>
+          <div id="mobileTitle" class="navbarItem active">{{ activeTitle() }}</div>
           {% if lang == "fi" %}
             <a href="/main" class="navbarItem"><img src="/static/flags/english.svg"></a>
           {% elif lang == "en" %}
@@ -69,7 +77,6 @@
         if (mobileLinks.style.display === "grid") {
           mobileLinks.style.display = "none";
           mobileButton.classList.remove("active");
-
         } else {
           mobileLinks.style.display = "grid";
           mobileButton.classList.add("active");

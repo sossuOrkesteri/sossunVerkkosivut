@@ -24,7 +24,7 @@ body {
 }
 
 /* General styling of the highest level elements */
-#header, #navbar, #centerbox, #footer, #sossuLogo, #mobileLinks {
+#header, #navbar, #centerbox, #footer, #sossuLogo, #mobileLinks, #mobileTitle {
   background-color: var(--regular-pink);
 }
 
@@ -158,6 +158,11 @@ p:last-of-type {
   box-shadow: inherit;
 }
 
+#mobileTitle {
+  display: none;
+  cursor: auto;
+}
+
 @media (max-width: 600px) {
   #mobileButton {
     display: flex;
@@ -169,5 +174,13 @@ p:last-of-type {
 
   #navbarLinks {
     display: none;
+  }
+
+  #mobileTitle {
+    display: flex;
+  }
+
+  #navbarInner {
+    grid-template-columns: 3em 1fr 3em;
   }
 }
