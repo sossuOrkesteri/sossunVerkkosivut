@@ -15,14 +15,14 @@ navbars = {
         NavbarItem("etusivu",       "index.html",         "Etusivu"),
         NavbarItem("tilaa",         "tilaa_sossu.html",   "Tilaa meidät"),
         NavbarItem("mukaan",        "tule_mukaan.html",   "Tule mukaan"),
-        NavbarItem("ajankohtaista", "ajankohtaista.html", "Ajankohtaista"),
+        #NavbarItem("ajankohtaista", "ajankohtaista.html", "Ajankohtaista"),
         NavbarItem("sitsilaulu22",  "sitsilaulu22.html",  "Sitsilaulukonsertti"),
     ],
     "en": [
         NavbarItem("main",          "english_main.html",  "Main"),
         NavbarItem("bookus",        "book_sossu.html",    "Book us"),
         NavbarItem("join",          "join_sossu.html",    "Join SOSSu"),
-        NavbarItem("socialmedia",   "ajankohtaista.html", "Social Media"),
+        #NavbarItem("socialmedia",   "ajankohtaista.html", "Social Media"),
     ]
 }
 
@@ -60,13 +60,13 @@ def getPage(url, **kwargs):
             **kwargs)
 
 # social media tab is defined explicitly because of the extra data it needs
-@app.route("/ajankohtaista")
-@app.route("/socialmedia")
-def getSocialMediaPage():
-    try:
-        file = open("instagram_media.json", "r")
-        media = json.loads(file.read())
-    except FileNotFoundError as err:
-        return getErrorPage(str(err))
-    url = request.url_rule.rule[1:] # requested url without the leading slash
-    return getPage(url, media=media)
+#@app.route("/ajankohtaista")
+#@app.route("/socialmedia")
+#def getSocialMediaPage():
+#    try:
+#        file = open("instagram_media.json", "r")
+#        media = json.loads(file.read())
+#    except FileNotFoundError as err:
+#        return getErrorPage(str(err))
+#    url = request.url_rule.rule[1:] # requested url without the leading slash
+#    return getPage(url, media=media)
