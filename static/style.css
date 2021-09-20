@@ -80,6 +80,11 @@ body {
   width: 100%;
 }
 
+ul {
+  list-style-type:none;
+  font-family:Tahoma
+}
+
 #navbarInner {
   display: grid;
   grid-template-columns: 1fr 3em;
