@@ -12,6 +12,15 @@ body {
   padding: 0;
 }
 
+a:link {
+  font-weight: bold;
+  color: black;
+}
+
+a.textlink:hover {
+  background: var(--active-pink);
+}
+
 #website {
   width: max(600px, min(90%, 50em));
   margin-left: auto;
@@ -145,6 +154,7 @@ p:last-of-type {
   align-items: center;
   height: 3em;
 }
+
 
 #mobileButton {
   display: none;
