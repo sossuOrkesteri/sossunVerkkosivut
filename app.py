@@ -59,6 +59,10 @@ def getPage(url, **kwargs):
             lang=lang,
             **kwargs)
 
+@app.route("/tapahtumat")
+def tapahtumat():
+    return render_template("tapahtumat.html")
+
 # social media tab is defined explicitly because of the extra data it needs
 #@app.route("/ajankohtaista")
 #@app.route("/socialmedia")

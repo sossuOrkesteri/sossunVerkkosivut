@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    {% block head %}
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/sossulogo-64x64.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savolaisen Osakunnan Soitannollinen Seura SOSSu ry</title>
+    {% endblock %}
+  </head>
+
+  <body>
+    <div id="website">
+      <div id="header" class="shadow">
+        <img id="headerPicture" src="/static/{{ pictureId }}">
+        <img id="sossuLogo" src="/static/sossulogo.svg">
+      </div>
+
+
+      <div id="centerbox" class="shadow">{% block content %}{% endblock %}</div>
+
+
+    </div>
+
+  </body>
+</html>
