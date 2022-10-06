@@ -16,7 +16,6 @@ navbars = {
         NavbarItem("tilaa",         "tilaa_sossu.html",   "Tilaa meidät"),
         NavbarItem("mukaan",        "tule_mukaan.html",   "Tule mukaan"),
         #NavbarItem("ajankohtaista", "ajankohtaista.html", "Ajankohtaista"),
-        NavbarItem("sitsilaulu22",  "sitsilaulu22.html",  "Sitsilaulukonsertti"),
     ],
     "en": [
         NavbarItem("main",          "english_main.html",  "Main"),
