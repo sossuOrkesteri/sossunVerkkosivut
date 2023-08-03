@@ -1,0 +1,14 @@
+[Unit]
+Description=Python flask app running the sossu main page.
+
+[Service]
+# disables output buffering -> logging works correctly
+Environment=PYTHONUNBUFFERED=1
+Restart=on-failure
+# checks network connectivity before launching
+ExecStartPre=/bin/sh -c 'while ! ping -c1 1.1.1.1 -W.5; do sleep 1; done'
+# executes the site
+ExecStart=/root/sossunVerkkosivut/.venv/bin/python3 /root/sossunVerkkosivut/wsgi.py
+
+[Install]
+WantedBy=multi-user.target
